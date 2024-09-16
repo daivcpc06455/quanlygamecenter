@@ -1,0 +1,20 @@
+/* src/styles/admin.css */
+.admin-layout nav {
+    background-color: #343a40;
+    padding: 10px;
+  }
+  
+  .admin-layout nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .admin-layout nav ul li {
+    color: white;
+  }
+  
+  .admin-layout .container {
+    padding-top: 20px;
+  }
+  
