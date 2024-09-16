@@ -1,0 +1,20 @@
+/* src/styles/client.css */
+.client-layout nav {
+    background-color: #007bff;
+    padding: 10px;
+  }
+  
+  .client-layout nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .client-layout nav ul li {
+    color: white;
+  }
+  
+  .client-layout .container {
+    padding-top: 20px;
+  }
+  
