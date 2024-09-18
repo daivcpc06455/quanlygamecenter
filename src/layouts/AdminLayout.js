@@ -1,18 +1,20 @@
 import React from 'react';
 import { Outlet, Link } from 'react-router-dom';
-import '../styles/admin.css'; // Import tệp admin.css
-import userAvatar from '../layouts/assets/p100000250.png'; // Import hình ảnh đại diện (avatar)
+import '../styles/admin.css';
+import userAvatar from '../components/Admin/assets/p100000250.png'; // Import hình đại diện
 
 const AdminLayout = () => {
   return (
     <div className="admin-layout d-flex">
-      {/* Sidebar dọc */}
       <nav className="navbar navbar-dark bg-dark flex-column vh-100 p-3">
-        {/* Avatar và các tùy chọn đăng nhập */}
         <div className="text-center mb-4">
-          <img src={userAvatar} alt="User Avatar" className="rounded-circle mb-2" style={{ width: '80px', height: '80px' }} />
+          <img
+            src={userAvatar}
+            alt="User Avatar"
+            className="rounded-circle mb-2"
+            style={{ width: '80px', height: '80px' }}
+          />
           <h6 className="text-white">Tên người dùng</h6>
-          {/* Dropdown menu cho tùy chọn */}
           <div className="dropdown">
             <button
               className="btn btn-secondary dropdown-toggle"
@@ -31,33 +33,52 @@ const AdminLayout = () => {
           </div>
         </div>
 
-        <ul className="navbar-nav w-100">
-          <li className="nav-item">
-            <Link className="nav-link" to="/admin/dashboard">Thống kê</Link>
+        {/* Danh sách chức năng */}
+        <ul className="navbar-nav w-100 mt-3">
+          <li className="nav-item mb-2">
+            <Link className="nav-link text-white" to="/admin/dashboard">
+              <i className="bi bi-speedometer2 me-2"></i> Bảng Điều khiển
+            </Link>
+          </li>
+          <li className="nav-item mb-2">
+            <Link className="nav-link text-white" to="/admin/statistics">
+              <i className="bi bi-bar-chart-line me-2"></i> Thống kê
+            </Link>
+          </li>
+          <li className="nav-item mb-2">
+            <Link className="nav-link text-white" to="/admin/rooms">
+              <i className="bi bi-door-open me-2"></i> Quản lý phòng
+            </Link>
+          </li>
+          <li className="nav-item mb-2">
+            <Link className="nav-link text-white" to="/admin/bookings">
+              <i className="bi bi-calendar-check me-2"></i> Quản lý đơn đặt phòng
+            </Link>
+          </li>
+          <li className="nav-item mb-2">
+            <Link className="nav-link text-white" to="/admin/services">
+              <i className="bi bi-cart me-2"></i> Quản lý dịch vụ
+            </Link>
+          </li>
+          <li className="nav-item mb-2">
+            <Link className="nav-link text-white" to="/admin/users">
+              <i className="bi bi-people me-2"></i> Quản lý người dùng
+            </Link>
+          </li>
+          <li className="nav-item mb-2">
+            <Link className="nav-link text-white" to="/admin/customers">
+              <i className="bi bi-person-lines-fill me-2"></i> Quản lý khách hàng
+            </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/admin/rooms">Quản lý phòng</Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/admin/bookings">Quản lý đơn đặt phòng</Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/admin/services">Quản lý dịch vụ</Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/admin/users">Quản lý người dùng</Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/admin/customers">Quản lý khách hàng</Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/admin/cart">Quản lý giỏ hàng</Link>
+            <Link className="nav-link text-white" to="/admin/cart">
+              <i className="bi bi-cart4 me-2"></i> Quản lý giỏ hàng
+            </Link>
           </li>
         </ul>
       </nav>
 
-      {/* Nội dung chính */}
-      <div className="container-fluid mt-3">
+      <div className="container-fluid mt-3" style={{ marginLeft: '250px' }}>
         <Outlet /> {/* Nơi các route con sẽ được render */}
       </div>
     </div>
