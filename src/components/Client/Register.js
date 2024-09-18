@@ -1,5 +1,6 @@
 // src/components/Client/Register.js
 import React from 'react';
+import './Css/Register.css';
 
 const ClientRegister = () => {
   return (
