@@ -1,0 +1,47 @@
+.room-detail {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .room-detail h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .room-description {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .room-info {
+    text-align: left;
+    margin-top: 20px;
+  }
+  
+  .room-info p {
+    font-size: 16px;
+    margin: 10px 0;
+  }
+  
+  .room-info strong {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Style for strong and emphasized text */
+  .room-info p strong {
+    font-size: 18px;
+    color: #555;
+  }
+  
