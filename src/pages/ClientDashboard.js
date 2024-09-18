@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import RoomBooking from '../components/Client/RoomBooking';  // Kiểm tra lại đường dẫn đúng
 import FoodMenu from '../components/Client/FoodMenu';        // Đảm bảo đường dẫn chính xác
-import Cart from '../components/Client/Cart';
+import Cart from '../components/Client/cart';
 import Checkout from '../components/Client/Checkout';        // Đảm bảo đường dẫn đúng
 
 const ClientDashboard = () => {
