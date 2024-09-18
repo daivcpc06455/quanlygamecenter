@@ -6,7 +6,6 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import AdminLayout from './layouts/AdminLayout';
 import ClientLayout from './layouts/ClientLayout';
 import AdminDashboard from './pages/AdminDashboard';
-import ClientDashboard from './pages/ClientDashboard';
 import RoomManagement from './components/Admin/RoomManagement';
 import CustomerManagement from './components/Admin/CustomerManagement';
 import BookingHistory from './components/Admin/BookingHistory'; // Thêm quản lý đơn đặt phòng
@@ -28,8 +27,8 @@ function App() {
         </Route>
 
         {/* Client routes */}
-        <Route path="/client" element={<ClientLayout />}>
-          <Route path="dashboard" element={<ClientDashboard />} />
+        <Route path="/client/*" element={<ClientLayout />}>
+        
         </Route>
       </Routes>
     </Router>
