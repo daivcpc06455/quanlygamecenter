@@ -1,28 +1,30 @@
-import React from 'react';
-import { Outlet, Link } from 'react-router-dom';
-import '../styles/client.css';  // Import tệp client.css
+import React, { useState } from 'react';
+import RoomBooking from '../components/Client/RoomBooking';  // Kiểm tra lại đường dẫn đúng
+import FoodMenu from '../components/Client/FoodMenu';        // Đảm bảo đường dẫn chính xác
+import Cart from '../components/Client/Cart';
+import Checkout from '../components/Client/Checkout';        // Đảm bảo đường dẫn đúng
 
-const ClientLayout = () => {
+const ClientDashboard = () => {
+  const [cart, setCart] = useState([]);
+
+  const addToCart = (item) => {
+    setCart([...cart, item]);
+  };
+
+  const removeFromCart = (index) => {
+    const newCart = cart.filter((_, i) => i !== index);
+    setCart(newCart);
+  };
+
   return (
-    <div className="client-layout">
-      <nav className="navbar navbar-light bg-light">
-        <ul className="navbar-nav">
-          <li className="nav-item">
-            <Link className="nav-link" to="/client/dashboard">Dashboard</Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/client/rooms">Xem phòng</Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/client/cart">Giỏ hàng</Link>
-          </li>
-        </ul>
-      </nav>
-      <div className="container mt-3">
-        <Outlet /> {/* Render các route con */}
-      </div>
+    <div>
+      <h1>Trang Người Dùng</h1>
+      <RoomBooking />
+      <FoodMenu addToCart={addToCart} />
+      <Cart cart={cart} removeFromCart={removeFromCart} />
+      <Checkout cart={cart} />
     </div>
   );
 };
 
-export default ClientLayout;
+export default ClientDashboard;
