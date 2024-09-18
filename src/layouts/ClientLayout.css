@@ -1,0 +1,68 @@
+/* ClientLayout.css */
+
+.layout-container {
+    position: relative; /* Để vị trí tương đối cho phép các thành phần con định vị */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #f7f9fc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .layout-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 30px;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .layout-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cart-icon-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #fff;
+    border-radius: 50px;
+    padding: 10px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .cart-icon {
+    font-weight: bold;
+    color: #007bff;
+    display: flex;
+    align-items: center;
+  }
+  
+  .cart-icon:hover {
+    color: #0056b3;
+  }
+  
+  /* Giỏ hàng thả xuống */
+  .cart-dropdown {
+    position: absolute;
+    top: 60px; /* Đặt giỏ hàng bên dưới nút giỏ hàng */
+    right: 20px;
+    width: 300px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    z-index: 100;
+  }
+  
