@@ -1,0 +1,75 @@
+.services-container {
+    display: flex;
+    padding: 20px;
+  }
+  
+  .category-sidebar {
+    flex: 1;
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-right: 2px solid #dee2e6;
+  }
+  
+  .category-sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .category-sidebar ul li {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #dee2e6;
+  }
+  
+  .category-sidebar ul li:hover {
+    background-color: #e9ecef;
+  }
+  
+  .food-list {
+    flex: 2;
+    padding: 15px;
+  }
+  
+  .food-list ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .food-list ul li {
+    padding: 10px 0;
+    border-bottom: 1px solid #dee2e6;
+  }
+  
+  .food-list ul li button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .food-list ul li button:hover {
+    background-color: #218838;
+  }
+  
+  .cart-summary {
+    flex: 1;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-left: 2px solid #dee2e6;
+  }
+  
+  .cart-summary ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .cart-summary ul li {
+    padding: 10px 0;
+  }
+  
+  .cart-summary h4 {
+    margin-top: 20px;
+  }
+  
