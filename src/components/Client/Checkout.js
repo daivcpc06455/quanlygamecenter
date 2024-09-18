@@ -1,4 +1,5 @@
 import React from 'react';
+import './Css/Checkout.css';
 
 const Checkout = ({ cart, handleCheckout }) => {
   const total = cart.reduce((sum, item) => sum + item.price, 0);
