@@ -1,0 +1,18 @@
+.history-container {
+    padding: 20px;
+  }
+  
+  .history-container ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .history-container ul li {
+    padding: 10px 0;
+    border-bottom: 1px solid #dee2e6;
+  }
+  
+  .history-container h4 {
+    margin-top: 20px;
+  }
+  
