@@ -1,20 +1,96 @@
-/* src/styles/client.css */
-.client-layout nav {
-    background-color: #007bff;
-    padding: 10px;
-  }
-  
-  .client-layout nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-  }
-  
-  .client-layout nav ul li {
-    color: white;
-  }
-  
-  .client-layout .container {
-    padding-top: 20px;
-  }
-  
+/* Global styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f2f5; /* Màu nền nhẹ */
+}
+
+/* Layout chung */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1, h2 {
+  text-align: center;
+  color: #333;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background-color: #fff;
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Cart, RoomBooking, FoodMenu Styles */
+.menu-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Hiển thị 2 cột */
+  gap: 20px;
+}
+
+.room-list, .food-list {
+  margin-top: 20px;
+}
+
+.cart {
+  background-color: #fffbf0;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.cart h2 {
+  color: #ff6347; /* Màu sắc nổi bật cho tiêu đề */
+}
+
+.cart-items li {
+  display: flex;
+  justify-content: space-between;
+}
+
+.checkout {
+  background-color: #28a745;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+.checkout:hover {
+  background-color: #218838;
+}
+
+.total {
+  text-align: right;
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
