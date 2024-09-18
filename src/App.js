@@ -1,4 +1,3 @@
-// src/App.js
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import AdminLayout from './layouts/AdminLayout';
 import ClientLayout from './layouts/ClientLayout';
