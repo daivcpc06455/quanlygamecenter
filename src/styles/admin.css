@@ -17,4 +17,46 @@
   .admin-layout .container {
     padding-top: 20px;
   }
+  /* src/components/Admin/BookingHistory.css */
+
+  .booking-history .card {
+    border-radius: 15px;
+    overflow: hidden;
+  }
+  
+  .booking-history .card-header {
+    font-size: 1.75rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  
+  .booking-history .table {
+    margin-top: 20px;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+  }
+  
+  .booking-history .table thead {
+    background-color: #007bff;
+    color: #ffffff;
+  }
+  
+  .booking-history .table tbody tr {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .booking-history .table tbody tr:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .booking-history .badge {
+    font-size: 1rem;
+    padding: 10px 15px;
+    border-radius: 20px;
+  }
   
