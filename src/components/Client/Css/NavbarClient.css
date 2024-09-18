@@ -1,0 +1,36 @@
+/* NavbarClient.css */
+.navbar-client {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #333;
+    color: white;
+  }
+  
+  .navbar-client-brand h1 {
+    font-size: 24px;
+    margin: 0;
+  }
+  
+  .navbar-client-menu {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .navbar-client-menu li {
+    display: inline;
+  }
+  
+  .navbar-client-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+  }
+  
+  .navbar-client-menu a:hover {
+    color: #ddd;
+  }
+  
