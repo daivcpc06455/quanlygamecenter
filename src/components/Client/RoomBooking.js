@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
-const RoomBooking = () => {
-  const [searchTerm, setSearchTerm] = useState('');
+const RoomBooking = ({ addRoomToCart }) => {
   const [selectedRoom, setSelectedRoom] = useState(null);
 
   const rooms = [
@@ -12,23 +11,13 @@ const RoomBooking = () => {
 
   const handleSelectRoom = (room) => {
     setSelectedRoom(room);
+    addRoomToCart(room); // Thêm phòng vào giỏ hàng
   };
-
-  const filteredRooms = rooms.filter(room =>
-    room.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-
   return (
     <div>
       <h2>Đặt Phòng Quán Nét</h2>
-      <input
-        type="text"
-        placeholder="Tìm kiếm phòng..."
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-      />
       <ul>
-        {filteredRooms.map(room => (
+        {rooms.map(room => (
           <li key={room.id}>
             {room.name} - {room.price} VND
             <button onClick={() => handleSelectRoom(room)}>Chọn Phòng</button>
