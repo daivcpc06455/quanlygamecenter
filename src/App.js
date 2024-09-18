@@ -9,6 +9,8 @@ import AdminDashboard from './pages/AdminDashboard';
 import ClientDashboard from './pages/ClientDashboard';
 import RoomManagement from './components/Admin/RoomManagement';
 import CustomerManagement from './components/Admin/CustomerManagement';
+import ServiceManagement from './components/Admin/ServiceManagement';
+import Statistics from './components/Admin/Statistics';
 import BookingHistory from './components/Admin/BookingHistory'; // Thêm quản lý đơn đặt phòng
 
 
@@ -19,12 +21,17 @@ function App() {
   return (
     <Router>
       <Routes>
-        {/* Admin routes */}
-        <Route path="/admin" element={<AdminLayout />}>
+       <Route path="/admin" element={<AdminLayout />}>
+          {/* Khi truy cập /admin, hiển thị AdminDashboard */}
+          <Route index element={<AdminDashboard />} />
+          
+          {/* Các route khác trong admin */}
           <Route path="dashboard" element={<AdminDashboard />} />
           <Route path="rooms" element={<RoomManagement />} />
           <Route path="customers" element={<CustomerManagement />} />
-          <Route path="bookings" element={<BookingHistory />} /> {/* Quản lý đơn đặt phòng */}
+          <Route path="bookings" element={<BookingHistory />} />
+          <Route path='services' element={<ServiceManagement />} />
+          <Route path="statistics" element={<Statistics />} />
         </Route>
 
         {/* Client routes */}
