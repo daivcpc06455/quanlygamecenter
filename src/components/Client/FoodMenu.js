@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Css/FoodMenu.css';
 
 const FoodMenu = ({ addToCart }) => {
   const [searchTerm, setSearchTerm] = useState('');
