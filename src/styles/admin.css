@@ -1,62 +1,139 @@
-/* src/styles/admin.css */
-.admin-layout nav {
-    background-color: #343a40;
-    padding: 10px;
-  }
-  
-  .admin-layout nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-  }
-  
-  .admin-layout nav ul li {
-    color: white;
-  }
-  
-  .admin-layout .container {
-    padding-top: 20px;
-  }
-  /* src/components/Admin/BookingHistory.css */
+src/styles/admin.css
 
-  .booking-history .card {
-    border-radius: 15px;
-    overflow: hidden;
-  }
-  
-  .booking-history .card-header {
-    font-size: 1.75rem;
-    letter-spacing: 1px;
-    font-weight: 600;
-    text-transform: uppercase;
-  }
-  
-  .booking-history .table {
-    margin-top: 20px;
-    border-collapse: separate;
-    border-spacing: 0 10px;
-  }
-  
-  .booking-history .table thead {
-    background-color: #007bff;
-    color: #ffffff;
-  }
-  
-  .booking-history .table tbody tr {
-    background-color: #f8f9fa;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-  }
-  
-  .booking-history .table tbody tr:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  }
-  
-  .booking-history .badge {
-    font-size: 1rem;
-    padding: 10px 15px;
-    border-radius: 20px;
-  }
-  
+/* Cấu trúc chung cho admin layout */
+.admin-layout nav {
+  background-color: #343a40;
+  padding: 10px;
+}
+
+.admin-layout nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column; /* Sắp xếp theo chiều dọc */
+  gap: 10px; /* Khoảng cách giữa các mục */
+  padding-left: 0; /* Xóa dấu chấm đầu dòng */
+}
+
+.admin-layout nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  display: block;
+}
+
+.admin-layout nav ul li a:hover {
+  color: #007bff;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.admin-layout .container {
+  padding-top: 20px;
+}
+
+/* Avatar và dropdown */
+.text-center img {
+  border: 2px solid white;
+  padding: 2px;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+}
+
+.dropdown-menu {
+  z-index: 1050; /* Đảm bảo dropdown hiển thị phía trên các thành phần khác */
+}
+
+/* src/components/Admin/BookingHistory.css */
+
+/* Cấu trúc cho booking history */
+.booking-history .card {
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.booking-history .card-header {
+  font-size: 1.75rem;
+  letter-spacing: 1px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.booking-history .table {
+  margin-top: 20px;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+  overflow-x: auto; /* Thêm để tránh lỗi hiển thị trên màn hình nhỏ */
+}
+
+.booking-history .table thead {
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+.booking-history .table tbody tr {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.booking-history .table tbody tr:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.booking-history .badge {
+  font-size: 1rem;
+  padding: 10px 15px;
+  border-radius: 20px;
+}
+
+/* General styles */
+* {
+  box-sizing: border-box; /* Đảm bảo kích thước phần tử tính luôn cả padding và border */
+}
+/* Đổi màu nền cho dropdown */
+.dropdown-menu {
+  background-color: #343a40; /* Màu nền tối cho dropdown */
+}
+
+/* Đổi màu chữ cho các mục trong dropdown */
+.dropdown-item {
+  color: #ffffff; /* Màu chữ trắng */
+}
+
+/* Đổi màu chữ khi hover vào mục dropdown */
+.dropdown-item:hover {
+  background-color: #007bff; /* Màu nền khi hover */
+  color: #ffffff; /* Màu chữ trắng khi hover */
+}
+.admin-layout .navbar-nav {
+  margin-top: 30px; /* Điều chỉnh khoảng cách giữa avatar và danh sách */
+}
+
+.admin-layout .navbar-nav .nav-item {
+  margin-bottom: 10px; /* Khoảng cách giữa các mục */
+}
+
+.admin-layout img {
+  margin-bottom: 20px; /* Khoảng cách giữa ảnh avatar và các mục khác */
+}
+/* Sidebar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px; /* Chiều rộng của sidebar */
+  height: 100vh; /* Chiều cao toàn màn hình */
+  overflow-y: auto;
+  background-color: #343a40; /* Màu nền của sidebar */
+  z-index: 1000; /* Đảm bảo nó ở phía trên các phần khác */
+}
+
+/* Nội dung chính */
+.container-fluid {
+  margin-left: 250px; /* Đảm bảo nội dung không bị đè lên bởi sidebar */
+  padding-top: 20px;
+}
+
