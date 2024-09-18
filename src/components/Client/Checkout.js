@@ -1,12 +1,7 @@
 import React from 'react';
 
-const Checkout = ({ cart }) => {
+const Checkout = ({ cart, handleCheckout }) => {
   const total = cart.reduce((sum, item) => sum + item.price, 0);
-
-  const handleCheckout = () => {
-    alert('Thanh toán thành công!');
-    // Logic thêm cho thanh toán
-  };
 
   return (
     <div>
