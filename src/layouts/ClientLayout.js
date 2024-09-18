@@ -1,39 +1,51 @@
 import React, { useState } from 'react';
+import { Routes, Route, Outlet } from 'react-router-dom';
+import NavbarClient from '../components/Client/NavrbarClient';
+import FooterClient from '../components/Client/Footerclient';
+import RoomList from '../components/Client/RoomList';
 import RoomBooking from '../components/Client/RoomBooking';
-import FoodMenu from '../components/Client/FoodMenu';
-import Cart from '../components/Client/cart';
+import ClientDashboard from '../pages/ClientDashboard';
+import RoomDetail from '../components/Client/RoomDetail';
+import Login from '../components/Client/Login';
+import Register from '../components/Client/Register';
 import Checkout from '../components/Client/Checkout';
+import Cart from '../components/Client/cart';
+import Services from '../components/Client/Services';  // Thêm Services
+import History from '../components/Client/History';    // Thêm History
 
-const ClientDashboard = () => {
-  const [cart, setCart] = useState([]);
+const ClientLayout = () => {
+  const [cartItems, setCartItems] = useState([]);  // Trạng thái để lưu món ăn đã chọn
 
-  const addToCart = (item) => {
-    setCart([...cart, item]);
-  };
-
-  const addRoomToCart = (room) => {
-    setCart([...cart, room]);
-  };
-
-  const removeFromCart = (index) => {
-    const newCart = cart.filter((_, i) => i !== index);
-    setCart(newCart);
-  };
-
-  const handleCheckout = () => {
-    alert('Thanh toán thành công!');
-    setCart([]); // Xóa giỏ hàng sau khi thanh toán
+  const addToCart = (food) => {
+    setCartItems((prevItems) => [...prevItems, food]);
   };
 
   return (
-    <div>
-      <h1>Giao Diện Người Dùng</h1>
-      <RoomBooking addRoomToCart={addRoomToCart} />
-      <FoodMenu addToCart={addToCart} />
-      <Cart cart={cart} removeFromCart={removeFromCart} />
-      <Checkout cart={cart} handleCheckout={handleCheckout} />
+    <div className="client-layout">
+      <NavbarClient />
+      <div className="content">
+        <Routes>
+          <Route path="/" element={<RoomList />} />
+          <Route path="dashboard" element={<ClientDashboard />} />
+          <Route path="booking" element={<RoomBooking />} />
+          <Route path="login" element={<Login />} />
+          <Route path="register" element={<Register />} />
+          <Route path="checkout" element={<Checkout />} />
+          <Route path="cart" element={<Cart />} />
+
+          {/* Route cho Services, truyền cartItems */}
+          <Route path="services" element={<Services cartItems={cartItems} addToCart={addToCart} />} />
+
+          {/* Route cho History */}
+          <Route path="history" element={<History cartItems={cartItems} />} />
+
+          <Route path="room/:id" element={<RoomDetail />} />
+        </Routes>
+        <Outlet />
+      </div>
+      <FooterClient />
     </div>
   );
 };
 
-export default ClientDashboard;
+export default ClientLayout;
