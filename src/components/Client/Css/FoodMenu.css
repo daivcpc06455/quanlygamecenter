@@ -1,0 +1,27 @@
+/* FoodMenu.css */
+.food-menu {
+    margin: 20px;
+  }
+  
+  .food-menu ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .food-menu li {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+  }
+  
+  .food-menu li:hover {
+    background-color: #e2e2e2;
+  }
+  
+  .food-menu h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
