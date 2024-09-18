@@ -128,9 +128,7 @@ const RoomManagement = () => {
             </tr>
           ))}
         </tbody>
-      </table>
-
-      {/* Modal chi tiết phòng */}
+      </table>{/* Modal chi tiết phòng */}
       {selectedRoom && (
         <div className="modal fade show d-block" tabIndex="-1" role="dialog">
           <div className="modal-dialog modal-fullscreen" role="document"> {/* Modal fullscreen */}
