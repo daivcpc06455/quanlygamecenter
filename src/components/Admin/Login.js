@@ -1,23 +1,33 @@
 // src/components/Admin/Login.js
-import React from 'react';
+import React, { useState } from 'react';
+import axios from 'axios';
 
-const AdminLogin = () => {
+const Login = () => {
+  const [formData, setFormData] = useState({
+    username: '',
+    password: '',
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post('http://localhost:5000/api/users/login', formData);
+      alert(response.data);
+    } catch (error) {
+      alert('Error during login');
+    }
+  };
   return (
-    <div>
-      <h2>Admin Login</h2>
-      <form>
-        <div className="form-group">
-          <label>Email</label>
-          <input type="email" className="form-control" placeholder="Nhập email" />
-        </div>
-        <div className="form-group">
-          <label>Password</label>
-          <input type="password" className="form-control" placeholder="Nhập mật khẩu" />
-        </div>
-        <button type="submit" className="btn btn-dark">Đăng nhập</button>
-      </form>
-    </div>
+    <form onSubmit={handleSubmit}>
+      <input type="text" name="username" placeholder="Username" onChange={handleChange} />
+      <input type="password" name="password" placeholder="Password" onChange={handleChange} />
+      <button type="submit">Login</button>
+    </form>
   );
 };
 
-export default AdminLogin;
+export default Login;
