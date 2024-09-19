@@ -12,25 +12,24 @@ import CustomerManagement from './components/Admin/CustomerManagement';
 import ServiceManagement from './components/Admin/ServiceManagement';
 import Statistics from './components/Admin/Statistics';
 import BookingHistory from './components/Admin/BookingHistory'; // Thêm quản lý đơn đặt phòng
-
-
-
-// import UserManagement from './components/Admin/UserManagement';
+import Login from './components/Admin/Login';
+import Register from './components/Admin/Register';
 
 function App() {
   return (
     <Router>
       <Routes>
-       <Route path="/admin" element={<AdminLayout />}>
-          {/* Khi truy cập /admin, hiển thị AdminDashboard */}
+        {/* Admin routes */}
+        <Route path="/admin" element={<AdminLayout />}>
+          {/* Trang dashboard chính cho admin */}
           <Route index element={<AdminDashboard />} />
-          
+
           {/* Các route khác trong admin */}
           <Route path="dashboard" element={<AdminDashboard />} />
           <Route path="rooms" element={<RoomManagement />} />
           <Route path="customers" element={<CustomerManagement />} />
           <Route path="bookings" element={<BookingHistory />} />
-          <Route path='services' element={<ServiceManagement />} />
+          <Route path="services" element={<ServiceManagement />} />
           <Route path="statistics" element={<Statistics />} />
         </Route>
 
@@ -38,6 +37,13 @@ function App() {
         <Route path="/client" element={<ClientLayout />}>
           <Route path="dashboard" element={<ClientDashboard />} />
         </Route>
+
+        {/* Routes cho Login và Register */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+
+        {/* Redirect về trang đăng nhập nếu không tìm thấy route */}
+        <Route path="*" element={<Login />} />
       </Routes>
     </Router>
   );
